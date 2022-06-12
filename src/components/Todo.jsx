@@ -10,17 +10,40 @@ function Todo({ todo, toggleComplete, removeTodo }) {
   }
 
   return (
-    <div style={{ display: "flex", textAlign: "center" }}>
-      <input type='checkbox' onClick={handleCheck} />
-      <li
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        marginTop: "25px",
+        minWidth: "400px",
+      }}>
+      <div
         style={{
-          color: "dark-gray",
-          listStyle: "none",
-          textDecoration: todo.completed ? "line-through" : "none",
+          display: "flex",
         }}>
-        {todo.task}
-      </li>
-      <button onClick={handleDelete}>X</button>
+        <input
+          className='input checkbox'
+          type='checkbox'
+          onClick={handleCheck}
+          style={{
+            marginRight: "1rem",
+          }}
+        />
+        <li
+          style={{
+            listStyle: "none",
+            fontSize: "20px",
+            fontWeight: "500",
+            marginRight: "0.75rem",
+            textDecoration: todo.completed ? "line-through" : "none",
+            color: todo.completed ? "gray" : "black",
+          }}>
+          {todo.task}
+        </li>
+      </div>
+
+      <button className='btn btn-delete' onClick={handleDelete}></button>
     </div>
   );
 }

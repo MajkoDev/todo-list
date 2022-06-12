@@ -19,8 +19,19 @@ function TodoForm({ addTodo }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input name='task' type='text' value={todo.task} onChange={handleInput} />
-      <button type='submit'>Add</button>
+      <input
+        name='task'
+        type='text'
+        value={todo.task}
+        onChange={handleInput}
+        style={{ 
+          height: "1.5rem", 
+          width: "15rem", 
+          border: "1px solid black" }}
+      />
+      <button className='btn btn-submit' type='submit'>
+        Add
+      </button>
     </form>
   );
 }
